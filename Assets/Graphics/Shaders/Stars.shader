@@ -77,7 +77,7 @@ Shader "Unlit/Stars"
                 float3 galaxyPos = i.localPos * _StarScale * 0.01;
                 float galaxy = simplex(galaxyPos.xz * 3 + galaxyOffset * 0.2 + n3 * 1 + pow(n2, 5)  * 0.03);
                 col += pow(galaxy, 3) * spacePalette(length(galaxyPos)) * 0.1;
-                col += galaxy * spacePalette(galaxyPos.x * 1) * 0.1;
+                col += lerp(galaxy, 1, 0.6) * spacePalette(galaxyPos.x * 1) * 0.1 ;
 
                 return float4(col, 0);
             }
