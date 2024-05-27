@@ -34,7 +34,7 @@ public class ThrusterAudio : MonoBehaviour
         thrusterOn = on;
 
         if (on) {
-            thrusterImpact.Play();
+            thrusterImpact.PlayOneShot(thrusterImpact.clip);
             thrusterVolume = 1;
         }
     }
