@@ -8,7 +8,7 @@ public class Mission
     public readonly int m_Reward;
     private List<GameObject> m_TrackedEnemies;
     private bool m_IsAccepted = false;
-    private int m_ShipsToSpawn;
+    public readonly int m_ShipsToSpawn;
      
     public Mission(GameObject uiMissionInstance, int reward, int shipsToSpawn)
     {
