@@ -32,7 +32,9 @@ public class ThrusterHandler : MonoBehaviour
     void SetThrusterOn(bool on)
     {
         thrusters.ForEach(x => {
+#pragma warning disable CS0618 // Type or member is obsolete
             x.trail.enableEmission = on;
+#pragma warning restore CS0618 // Type or member is obsolete
             x.flare.SetActive(on);
         });
     }
