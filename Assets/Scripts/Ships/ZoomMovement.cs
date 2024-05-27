@@ -1,3 +1,4 @@
+using Helpers;
 using UnityEngine;
 
 namespace Ships
@@ -48,20 +49,10 @@ namespace Ships
 
         private void RotateToCursor()
         {
-            Vector3 cursorWorldPosition = GetCursorWorldPosition();
+            Vector3 cursorWorldPosition = Camera.main.GetCursorWorldPosition();
             Vector3 forward = cursorWorldPosition - transform.position;
             Quaternion targetRotation = Quaternion.LookRotation(forward, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, AngularVelocity * Time.deltaTime);
-        }
-
-        private Vector3 GetCursorWorldPosition(int y = 0)
-        {
-            Plane xz = new(Vector3.up, new Vector3(0, y, 0));
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            xz.Raycast(ray, out float distance);
-
-            return ray.GetPoint(distance);
         }
 
         private void Accelerate()
