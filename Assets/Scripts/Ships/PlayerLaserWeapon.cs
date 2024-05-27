@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Upgrades;
 
 namespace Ships
@@ -36,6 +37,9 @@ namespace Ships
         
         [field: SerializeField]
         public Transform Turret5 { get; private set; }
+        
+        [field: SerializeField]
+        public UnityEvent BulletFired { get; private set; }
 
         private IEnumerator Start()
         {
@@ -55,6 +59,8 @@ namespace Ships
                 laser.velocity = transform.forward * LaserSpeed + Self.velocity;
                 laser.gameObject.layer = LayerMask.NameToLayer("PlayerWeapon");
             }
+            
+            BulletFired.Invoke();
         }
 
         private IEnumerable<Transform> GetSourceTurrets()
