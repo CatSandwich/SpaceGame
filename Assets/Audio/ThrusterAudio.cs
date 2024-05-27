@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Events;
 
 public class ThrusterAudio : MonoBehaviour
 {
     public AudioSource thrusterImpact;
     public AudioSource thrusterAmbient;
+    public AudioSource shoot;
     public AudioMixer thrusterMixer;
     bool thrusterOn = false;
     float thrusterVolume = 0;
@@ -27,6 +29,11 @@ public class ThrusterAudio : MonoBehaviour
         }
 
         UpdateThrusterMixer();
+    }
+
+    public void PlayShoot()
+    {
+        shoot.PlayOneShot(shoot.clip);
     }
 
     public void SetThrusterOn(bool on)
