@@ -17,10 +17,10 @@ namespace Upgrades
             public string Name { get; private set; }
 
             [field: SerializeField]
-            public T Value { get; private set; }
+            public int Cost { get; private set; }
 
             [field: SerializeField]
-            public int Cost { get; private set; }
+            public T Value { get; private set; }
         }
     }
 
