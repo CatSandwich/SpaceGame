@@ -212,7 +212,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2104631666}
   m_Father: {fileID: 0}
@@ -638,7 +638,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3137687651991117963, guid: c71760f0d82aa4d46a9c405fcc74c432, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0000023841858
+      value: 0.0000011920929
       objectReference: {fileID: 0}
     - target: {fileID: 5030758034609222339, guid: c71760f0d82aa4d46a9c405fcc74c432, type: 3}
       propertyPath: m_AnchorMax.x
@@ -732,6 +732,38 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6630510858898534636, guid: c71760f0d82aa4d46a9c405fcc74c432, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630510858898534636, guid: c71760f0d82aa4d46a9c405fcc74c432, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630510858898534636, guid: c71760f0d82aa4d46a9c405fcc74c432, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2324417790998609645}
+    - target: {fileID: 6630510858898534636, guid: c71760f0d82aa4d46a9c405fcc74c432, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630510858898534636, guid: c71760f0d82aa4d46a9c405fcc74c432, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630510858898534636, guid: c71760f0d82aa4d46a9c405fcc74c432, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630510858898534636, guid: c71760f0d82aa4d46a9c405fcc74c432, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630510858898534636, guid: c71760f0d82aa4d46a9c405fcc74c432, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 9028750112255784937, guid: c71760f0d82aa4d46a9c405fcc74c432, type: 3}
       propertyPath: m_Value
       value: 1
@@ -741,6 +773,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c71760f0d82aa4d46a9c405fcc74c432, type: 3}
+--- !u!1 &2324417790998609645 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2988024980139240905, guid: c71760f0d82aa4d46a9c405fcc74c432, type: 3}
+  m_PrefabInstance: {fileID: 2324417790998609644}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2959894472781031581
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -850,6 +887,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Station
       objectReference: {fileID: 0}
+    - target: {fileID: 9178435588725386727, guid: ec716f3b03e18104c84c98616f3f700e, type: 3}
+      propertyPath: m_PlayerRef
+      value: 
+      objectReference: {fileID: 259310615}
+    - target: {fileID: 9178435588725386727, guid: ec716f3b03e18104c84c98616f3f700e, type: 3}
+      propertyPath: m_StationMenu
+      value: 
+      objectReference: {fileID: 2324417790998609645}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -932,3 +977,4 @@ SceneRoots:
   - {fileID: 2324417790998609644}
   - {fileID: 1968520070}
   - {fileID: 281922916}
+  - {fileID: 9022043789483212407}
