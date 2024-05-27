@@ -21,10 +21,11 @@ public class MissionManager : MonoBehaviour
 
     [Header("Prefabs")]
     [SerializeField] private GameObject m_UIMissionPrefab;
-    [SerializeField] private GameObject m_EnemyShipPrefab;
+    [SerializeField] public GameObject m_EnemyShipPrefab;
 
     [Header("References")]
     [SerializeField] private GameObject m_MissionContent;
+    [SerializeField] private GameObject m_Player;
 
     [Header("Config")]
     [SerializeField] private int m_NumOfMissions;
@@ -34,10 +35,9 @@ public class MissionManager : MonoBehaviour
     [SerializeField] private int m_MaxEnemies;
 
     [Header("Spawn Points")]
-    [SerializeField] private Transform[] m_SpawnPoints;
+    [SerializeField] public Transform[] m_SpawnPoints;
 
-    // Private
-    private List<Mission> m_Missions = new List<Mission>();
+    public List<Mission> m_Missions = new List<Mission>();
 
     private void Awake()
     {
@@ -61,6 +61,11 @@ public class MissionManager : MonoBehaviour
         {
             if (!mission.IsComplete()) continue;
 
+            if (m_Player.TryGetComponent(out Wallet wallet))
+            {
+                wallet.AddMoney(mission.m_Reward);
+            }
+
             m_Missions.Remove(mission);
         }
     }
@@ -72,9 +77,9 @@ public class MissionManager : MonoBehaviour
 
         int reward = UnityEngine.Random.Range(m_MinReward, m_MaxReward + 1);
 
-        List<GameObject> ships = new();
+        int shipsToSpawn = UnityEngine.Random.Range(m_MinEnemies, m_MaxEnemies + 1);
 
-        var missions = new Mission(missionUI, reward, ships);
+        var missions = new Mission(missionUI, reward, shipsToSpawn);
 
         m_Missions.Add(missions);
     }

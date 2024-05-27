@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9042650423249699912}
   - component: {fileID: 3611215830306559550}
   - component: {fileID: 3948171211735866777}
+  - component: {fileID: 31744939140850856}
   - component: {fileID: 2692782593752943731}
   m_Layer: 5
   m_Name: Mission
@@ -77,6 +78,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &31744939140850856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4534490230246125297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f451da3abfd83d04eae1b16ee3b261bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2692782593752943731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,10 +130,22 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 3948171211735866777}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 31744939140850856}
+        m_TargetAssemblyTypeName: MissionUI, Assembly-CSharp
+        m_MethodName: AcceptMission
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7354387917884837334
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,10 +15,12 @@ public class Wallet : MonoBehaviour
     public void AddMoney(int amount)
     {
         m_Money += amount;
+        Debug.Log($"Added ${amount} to wallet for a total of {m_Money}");
     }
     
     public void RemoveMoney(int amount) 
     {
         m_Money -= amount;
+        Debug.Log($"Subtracted ${amount} to wallet for a total of {m_Money}");
     }
 }
