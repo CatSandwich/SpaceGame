@@ -17,7 +17,6 @@ public class StationMenu : MonoBehaviour
     {
         if (!Input.GetKeyDown(m_InteractKey)) return;
 
-
         if (Vector3.Distance(transform.position, m_PlayerRef.transform.position) <= m_InteractDistance)
         {
             a_MenuActive?.Invoke();
