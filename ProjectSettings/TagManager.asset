@@ -33,10 +33,10 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - PlayerWeapon
+  - Enemy
+  - EnemyWeapon
   m_SortingLayers:
   - name: Default
     uniqueID: 0
