@@ -1,10 +1,11 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Upgrades;
 
 namespace Ships
 {
-    public class PlayerTurretLink : MonoBehaviour
+    public class PlayerLaserWeapon : MonoBehaviour
     {
         [field: SerializeField]
         public FiveBoolUpgradeData Upgrade { get; private set; }
@@ -13,7 +14,13 @@ namespace Ships
         public Rigidbody LaserPrefab { get; private set; }
         
         [field: SerializeField]
+        public Rigidbody Self { get; private set; }
+        
+        [field: SerializeField]
         public float LaserSpeed { get; private set; }
+        
+        [field: SerializeField]
+        public float FireRate { get; private set; }
         
         [field: SerializeField]
         public Transform Turret1 { get; private set; }
@@ -30,15 +37,23 @@ namespace Ships
         [field: SerializeField]
         public Transform Turret5 { get; private set; }
 
-        private void Update()
+        private IEnumerator Start()
         {
-            if (Input.GetMouseButton(0))
+            while (true)
             {
-                foreach (Transform source in GetSourceTurrets())
-                {
-                    Rigidbody laser = Instantiate(LaserPrefab, source.position, source.rotation);
-                    laser.velocity = transform.forward * LaserSpeed;
-                }
+                yield return new WaitUntil(() => Input.GetMouseButton(0));
+                Shoot();
+                yield return new WaitForSeconds(1f / FireRate);
+            }
+        }
+
+        private void Shoot()
+        {
+            foreach (Transform source in GetSourceTurrets())
+            {
+                Rigidbody laser = Instantiate(LaserPrefab, source.position, source.rotation);
+                laser.velocity = transform.forward * LaserSpeed + Self.velocity;
+                laser.gameObject.layer = LayerMask.NameToLayer("PlayerWeapon");
             }
         }
 
