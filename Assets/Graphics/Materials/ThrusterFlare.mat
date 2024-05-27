@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ThrusterExhaust
-  m_Shader: {fileID: 4800000, guid: 8bddd80ef4bd3e34982ab5a7c855bdaf, type: 3}
+  m_Name: ThrusterFlare
+  m_Shader: {fileID: 4800000, guid: 91ec2dba48bb29d48a09f4138049737e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -44,7 +44,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 43fca99d44478e74789cd7b70b8313a4, type: 3}
+        m_Texture: {fileID: 2800000, guid: 676dca08813bd1342b2c54f1e5c98ee4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -78,6 +78,6 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 0.63213325, b: 0.27843142, a: 1}
+    - _Color: {r: 0.5886792, g: 0.87562746, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

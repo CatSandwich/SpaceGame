@@ -1,4 +1,4 @@
-Shader "Unlit/ThrusterExhaust"
+Shader "Unlit/ThrusterFlare"
 {
     Properties
     {
@@ -7,10 +7,10 @@ Shader "Unlit/ThrusterExhaust"
     }
     SubShader
     {
-        Tags { "RenderType"="Transparent" "Queue"="Transparent" }       
-        Blend One OneMinusSrcColor
-
+        Tags { "RenderType"="Transparent" "Queue"="Transparent" }
+        // ZTest Off
         ZWrite Off
+        Blend One OneMinusSrcColor
 
         Pass
         {
@@ -19,18 +19,18 @@ Shader "Unlit/ThrusterExhaust"
             #pragma fragment frag
 
             #include "UnityCG.cginc"
+            #include "Noise.cginc"
 
             struct appdata
             {
                 float4 vertex : POSITION;
-                float4 texcoord0 : TEXCOORD0;
+                float2 uv : TEXCOORD0;
             };
 
             struct v2f
             {
                 float2 uv : TEXCOORD0;
                 float4 vertex : SV_POSITION;
-                uint index : TEXCOORD1;
             };
 
             sampler2D _MainTex;
@@ -41,27 +41,20 @@ Shader "Unlit/ThrusterExhaust"
             v2f vert (appdata v)
             {
                 v2f o;
-
-                float2 uv = v.texcoord0.xy;
-                uint index = v.texcoord0.z;
-
                 o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(uv, _MainTex);
-                o.index = index;
+                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 return o;
             }
 
             fixed4 frag (v2f i) : SV_Target
             {
-                float2 uvOffset = 0;
-                uvOffset.x = i.index % 2;
-                uvOffset.y = (i.index % 4) >= 2;
+                fixed4 col = Luminance(tex2D(_MainTex, i.uv)) * float4(_Color, 1);
 
-                float2 uv = i.uv / 2 + uvOffset * 0.5;
-
-                fixed4 col = tex2D(_MainTex, uv);
-                col *= 2;
-                return float4(col.xyz * _Color, col.w);
+                float feather = 1 - length(i.uv * 2 - 1);
+                float flicker = noise1d(_Time.y * 20);
+                col *= feather * lerp(1, flicker, 0.1);
+                col *= 1.7;
+                return col;
             }
             ENDCG
         }

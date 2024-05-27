@@ -5,16 +5,18 @@ using UnityEngine;
 public class ThrusterHandler : MonoBehaviour
 {
     public List<GameObject> thrusterPositions;
-    public GameObject thrusterAsset;
-    List<ParticleSystem> thrusters = new List<ParticleSystem>();
+    public ThrusterTrail thrusterAsset;
+    List<ThrusterTrail> thrusters = new List<ThrusterTrail>();
 
     void Start()
     {
         thrusterPositions.ForEach(x => {
             var thruster = Instantiate(thrusterAsset, transform);
             thruster.transform.position = x.transform.position;
-            thrusters.Add(thruster.GetComponent<ParticleSystem>()); 
+            thrusters.Add(thruster); 
         });
+
+        SetThrusterOn(false);
     }
 
     void Update()
@@ -27,11 +29,11 @@ public class ThrusterHandler : MonoBehaviour
         }
     }
 
-    [System.Obsolete]
     void SetThrusterOn(bool on)
     {
         thrusters.ForEach(x => {
-            x.enableEmission = on;
+            x.trail.enableEmission = on;
+            x.flare.SetActive(on);
         });
     }
 }
