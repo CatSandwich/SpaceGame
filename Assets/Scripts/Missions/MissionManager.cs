@@ -1,9 +1,24 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MissionManager : MonoBehaviour
 {
+    public static MissionManager s_Instance;
+
+    public static MissionManager Instance
+    {
+        get
+        {
+            if (s_Instance == null)
+            {
+                Debug.LogError("MissionManager is null");
+            }
+            return s_Instance;
+        }
+    }
+
     [Header("Prefabs")]
     [SerializeField] private GameObject m_UIMissionPrefab;
     [SerializeField] private GameObject m_EnemyShipPrefab;
@@ -21,8 +36,22 @@ public class MissionManager : MonoBehaviour
     [Header("Spawn Points")]
     [SerializeField] private Transform[] m_SpawnPoints;
 
-    //Private
+    // Private
     private List<Mission> m_Missions = new List<Mission>();
+
+    private void Awake()
+    {
+        if (s_Instance == null)
+        {
+            s_Instance = this;
+        }
+        else if (s_Instance != this)
+        {
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
 
     void Update()
     {
@@ -41,7 +70,7 @@ public class MissionManager : MonoBehaviour
         var missionUI = Instantiate(m_UIMissionPrefab);
         missionUI.transform.SetParent(m_MissionContent.transform, false);
 
-        int reward = Random.Range(m_MinReward, m_MaxReward + 1);
+        int reward = UnityEngine.Random.Range(m_MinReward, m_MaxReward + 1);
 
         List<GameObject> ships = new();
 
