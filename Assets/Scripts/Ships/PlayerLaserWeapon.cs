@@ -10,6 +10,12 @@ namespace Ships
         public FiveBoolUpgradeData Upgrade { get; private set; }
         
         [field: SerializeField]
+        public Rigidbody LaserPrefab { get; private set; }
+        
+        [field: SerializeField]
+        public float LaserSpeed { get; private set; }
+        
+        [field: SerializeField]
         public Transform Turret1 { get; private set; }
         
         [field: SerializeField]
@@ -28,7 +34,11 @@ namespace Ships
         {
             if (Input.GetMouseButton(0))
             {
-                
+                foreach (Transform source in GetSourceTurrets())
+                {
+                    Rigidbody laser = Instantiate(LaserPrefab, source.position, source.rotation);
+                    laser.velocity = transform.forward * LaserSpeed;
+                }
             }
         }
 

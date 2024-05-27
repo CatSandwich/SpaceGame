@@ -20,13 +20,5 @@ namespace Combat
                 Debug.Log($"[DamageReceiver] '{name}' took {damage} damage.");
             }
         }
-        
-        private void OnValidate()
-        {
-            if (!FindObjectOfType<Collider>() && !FindObjectOfType<CapsuleCollider>() && !FindObjectOfType<BoxCollider>())
-            {
-                Debug.LogError($"No 3D collider found on DamageReceiver '{name}'.", this);
-            }
-        }
     }
 }
