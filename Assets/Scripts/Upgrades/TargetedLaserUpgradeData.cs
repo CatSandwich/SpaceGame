@@ -4,10 +4,10 @@ using UnityEngine;
 namespace Upgrades
 {
     [CreateAssetMenu(menuName = "Upgrade/AutoTurret")]
-    public class AutoTurretUpgradeData : UpgradeData<AutoTurretUpgradeData.AutoTurretData>
+    public class TargetedLaserUpgradeData : UpgradeData<TargetedLaserUpgradeData.TargetedLaserData>
     {
         [Serializable]
-        public struct AutoTurretData
+        public struct TargetedLaserData
         {
             public int MaxTargets;
             public float FireRate;
