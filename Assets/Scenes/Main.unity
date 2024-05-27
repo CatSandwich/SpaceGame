@@ -618,11 +618,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1141112696621787870, guid: c71760f0d82aa4d46a9c405fcc74c432, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1141112696621787870, guid: c71760f0d82aa4d46a9c405fcc74c432, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1141112696621787870, guid: c71760f0d82aa4d46a9c405fcc74c432, type: 3}
       propertyPath: m_AnchorMin.y
@@ -636,17 +636,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Station UI Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2988024980139240905, guid: c71760f0d82aa4d46a9c405fcc74c432, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3137687651991117963, guid: c71760f0d82aa4d46a9c405fcc74c432, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.0000011920929
       objectReference: {fileID: 0}
     - target: {fileID: 5030758034609222339, guid: c71760f0d82aa4d46a9c405fcc74c432, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5030758034609222339, guid: c71760f0d82aa4d46a9c405fcc74c432, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5670701433175740748, guid: c71760f0d82aa4d46a9c405fcc74c432, type: 3}
       propertyPath: m_Pivot.x
