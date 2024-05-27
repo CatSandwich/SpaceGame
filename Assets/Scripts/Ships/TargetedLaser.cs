@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Upgrades;
 
 namespace Ships
@@ -12,6 +13,15 @@ namespace Ships
         
         [field: SerializeField]
         public bool Verbose { get; private set; }
+
+        [field: SerializeField]
+        public UnityEvent<LaserTarget> TargetHit { get; private set; }
+
+        [field: SerializeField]
+        public UnityEvent<LaserTarget> TargetAcquired { get; private set; }
+
+        [field: SerializeField]
+        public UnityEvent<LaserTarget> TargetLost { get; private set; }
         
         private List<LaserTarget> Targets { get; } = new();
 
@@ -24,6 +34,8 @@ namespace Ships
                 foreach (LaserTarget target in Targets)
                 {
                     target.Damage(Upgrade.CurrentValue.Damage);
+                    TargetHit.Invoke(target);
+                    
                     LogVerbose($"Hit '{target.gameObject.name}' for {Upgrade.CurrentValue.Damage}.");
                 }
             }
@@ -57,12 +69,17 @@ namespace Ships
             Targets.Add(target);
             target.Destroyed.AddListener(() => RemoveTarget(target));
             
+            TargetAcquired.Invoke(target);
+            
             LogVerbose($"Target acquired: {target.gameObject.name}.");
         }
 
         private void RemoveTarget(LaserTarget target)
         {
             Targets.Remove(target);
+            
+            TargetLost.Invoke(target);
+            
             LogVerbose($"Target lost: {target.gameObject.name}.");
         }
 
