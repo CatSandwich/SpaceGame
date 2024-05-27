@@ -105,6 +105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2983594820919696094}
+  - component: {fileID: 9178435588725386727}
   m_Layer: 0
   m_Name: Station
   m_TagString: Untagged
@@ -147,6 +148,21 @@ Transform:
   - {fileID: 7007472325784520977}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9178435588725386727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3799863528466181662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cf0fdbd8855a824d8fcae284e92d9c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractDistance: 50
+  m_InteractKey: 102
+  m_StationMenu: {fileID: 0}
 --- !u!1 &4825625961258371144
 GameObject:
   m_ObjectHideFlags: 0
