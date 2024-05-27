@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 167683990114163613}
   - component: {fileID: 5717285150623694045}
   m_Layer: 0
-  m_Name: TargetIndicators
+  m_Name: TargetIndicatorHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
