@@ -23,11 +23,11 @@ namespace Ships
 
         private void Update()
         {
-            if (Input.GetMouseButton(1))
+            if (Input.GetKey(KeyCode.Space))
             {
                 Decelerate();
             }
-            else if (Input.GetMouseButton(0))
+            else if (Input.GetMouseButton(1))
             {
                 RotateToCursor();
                 Accelerate();

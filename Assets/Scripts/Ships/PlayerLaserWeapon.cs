@@ -9,13 +9,30 @@ namespace Ships
         [field: SerializeField]
         public FiveBoolUpgradeData Upgrade { get; private set; }
         
+        [field: SerializeField]
         public Transform Turret1 { get; private set; }
+        
+        [field: SerializeField]
         public Transform Turret2 { get; private set; }
+        
+        [field: SerializeField]
         public Transform Turret3 { get; private set; }
+        
+        [field: SerializeField]
         public Transform Turret4 { get; private set; }
+        
+        [field: SerializeField]
         public Transform Turret5 { get; private set; }
 
-        public IEnumerable<Transform> GetSourceTurrets()
+        private void Update()
+        {
+            if (Input.GetMouseButton(0))
+            {
+                
+            }
+        }
+
+        private IEnumerable<Transform> GetSourceTurrets()
         {
             if (Upgrade.CurrentValue.B1)
             {
