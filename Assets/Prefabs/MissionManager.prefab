@@ -44,12 +44,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff456b4d13a5ca4ab7238058f8325fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UIMissionPrefab: {fileID: 0}
-  m_EnemyShipPrefab: {fileID: 0}
+  m_UIMissionPrefab: {fileID: 4534490230246125297, guid: 2d1f23f3a57ed0b45b8f721bef9b2096, type: 3}
+  m_EnemyShipPrefab: {fileID: 139162131617809041, guid: 73ad1a2e18b62fe49b7262832e6bcce4, type: 3}
   m_MissionContent: {fileID: 0}
+  m_Player: {fileID: 0}
   m_NumOfMissions: 5
   m_MinReward: 10
   m_MaxReward: 100
   m_MinEnemies: 1
-  m_MaxEnemies: 5
-  m_SpawnPoints: []
+  m_MaxEnemies: 3
+  m_SpawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

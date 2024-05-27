@@ -162,7 +162,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractDistance: 50
   m_InteractKey: 102
+  m_ExitKey: 27
   m_StationMenu: {fileID: 0}
+  m_PlayerRef: {fileID: 0}
 --- !u!1 &4825625961258371144
 GameObject:
   m_ObjectHideFlags: 0

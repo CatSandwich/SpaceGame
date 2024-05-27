@@ -1202,25 +1202,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8882086084028424977, guid: 211d3e342f0f66b44b20ce00a55c2ac6, type: 3}
-      propertyPath: m_MaxEnemies
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8882086084028424977, guid: 211d3e342f0f66b44b20ce00a55c2ac6, type: 3}
       propertyPath: m_MissionContent
       value: 
       objectReference: {fileID: 1576918854}
-    - target: {fileID: 8882086084028424977, guid: 211d3e342f0f66b44b20ce00a55c2ac6, type: 3}
-      propertyPath: m_EnemyShipPrefab
-      value: 
-      objectReference: {fileID: 139162131617809041, guid: 73ad1a2e18b62fe49b7262832e6bcce4, type: 3}
-    - target: {fileID: 8882086084028424977, guid: 211d3e342f0f66b44b20ce00a55c2ac6, type: 3}
-      propertyPath: m_UIMissionPrefab
-      value: 
-      objectReference: {fileID: 4534490230246125297, guid: 2d1f23f3a57ed0b45b8f721bef9b2096, type: 3}
-    - target: {fileID: 8882086084028424977, guid: 211d3e342f0f66b44b20ce00a55c2ac6, type: 3}
-      propertyPath: m_SpawnPoints.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 8882086084028424977, guid: 211d3e342f0f66b44b20ce00a55c2ac6, type: 3}
       propertyPath: m_SpawnPoints.Array.data[0]
       value: 
