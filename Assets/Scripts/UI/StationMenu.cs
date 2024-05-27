@@ -24,6 +24,5 @@ public class StationMenu : MonoBehaviour
 
             m_StationMenu.SetActive(true);
         }
-
     }
 }
