@@ -14,13 +14,5 @@ namespace Combat
                 receiver.Damage(Damage);
             }
         }
-
-        private void OnValidate()
-        {
-            if (!FindObjectOfType<Collider>() && !FindObjectOfType<CapsuleCollider>() && !FindObjectOfType<BoxCollider>())
-            {
-                Debug.LogError($"No 3D collider on TriggerDamageSender '{name}'.", this);
-            }
-        }
     }
 }
