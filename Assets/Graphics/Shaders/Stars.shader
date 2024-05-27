@@ -4,13 +4,11 @@ Shader "Unlit/Stars"
     {
         _StarScale ("Star Scale", float) = 1
         _Parallax ("Parallax", float) = 1
+        _StarZ ("Star Z", float) = 20
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" "Queue"="Geometry-1" }
-        LOD 100
-        // ZWrite Off
-        ZTest Off
+        Tags { "RenderType"="Opaque" "Queue"="Geometry" }
 
         Pass
         {
@@ -36,13 +34,18 @@ Shader "Unlit/Stars"
 
             float _StarScale;
             float _Parallax;
+            float _StarZ;
 
             v2f vert (appdata v)
             {
                 v2f o;
-                o.vertex = UnityObjectToClipPos(v.vertex);
                 o.localPos = v.vertex;
                 o.center = localToWorld(0);
+
+                float3 worldPos = localToWorld(v.vertex);
+                float3 camToWorld = worldPos - _WorldSpaceCameraPos;
+                worldPos = _WorldSpaceCameraPos + camToWorld * _StarZ;
+                o.vertex = UnityObjectToClipPos(worldToLocal(worldPos));
                 return o;
             }
 
