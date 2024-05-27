@@ -17,7 +17,7 @@ namespace Combat
 
         private void OnValidate()
         {
-            if (!FindObjectOfType<Collider>())
+            if (!FindObjectOfType<Collider>() && !FindObjectOfType<CapsuleCollider>() && !FindObjectOfType<BoxCollider>())
             {
                 Debug.LogError($"No 3D collider on TriggerDamageSender '{name}'.", this);
             }
