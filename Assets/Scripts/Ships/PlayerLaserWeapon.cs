@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Helpers;
 using UnityEngine;
 using UnityEngine.Events;
 using Upgrades;
@@ -57,7 +58,7 @@ namespace Ships
             {
                 Rigidbody laser = Instantiate(LaserPrefab, source.position, source.rotation);
                 laser.velocity = transform.forward * LaserSpeed + Self.velocity;
-                laser.gameObject.layer = LayerMask.NameToLayer("PlayerWeapon");
+                laser.gameObject.SetLayer(LayerMask.NameToLayer("PlayerWeapon"), true);
             }
             
             BulletFired.Invoke();
