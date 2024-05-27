@@ -10,18 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c9e61a6539af0644a4f10ed5a8cab00, type: 3}
-  m_Name: AutoTurret
+  m_Name: TargetedLaser
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Automatic Turret
   <Description>k__BackingField: An automatic turret that fires as closeby enemies.
   <Key>k__BackingField: auto_turret
   <Upgrades>k__BackingField:
-  - <Name>k__BackingField: None
-    <Cost>k__BackingField: 0
-    <Value>k__BackingField:
-      MaxTargets: 0
-      FireRate: 0
-      Damage: 0
   - <Name>k__BackingField: Basic (0.5/s fire rate, 1 damage)
     <Cost>k__BackingField: 0
     <Value>k__BackingField:

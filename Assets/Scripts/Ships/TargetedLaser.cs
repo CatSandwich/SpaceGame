@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -36,8 +35,7 @@ namespace Ships
             {
                 if (Targets.Count < Upgrade.CurrentValue.MaxTargets)
                 {            
-                    Targets.Add(target);
-                    LogVerbose($"Target acquired: {target.gameObject.name}.");
+                    AddTarget(target);
                 }
                 else
                 {
@@ -50,9 +48,22 @@ namespace Ships
         {
             if (other.gameObject.TryGetComponent(out LaserTarget target))
             {
-                Targets.Remove(target);
-                LogVerbose($"Target lost: {target.gameObject.name}.");
+                RemoveTarget(target);
             }
+        }
+
+        private void AddTarget(LaserTarget target)
+        {
+            Targets.Add(target);
+            target.Destroyed.AddListener(() => RemoveTarget(target));
+            
+            LogVerbose($"Target acquired: {target.gameObject.name}.");
+        }
+
+        private void RemoveTarget(LaserTarget target)
+        {
+            Targets.Remove(target);
+            LogVerbose($"Target lost: {target.gameObject.name}.");
         }
 
         private void LogVerbose(string message)
@@ -62,7 +73,7 @@ namespace Ships
                 return;
             }
             
-            Debug.Log($"[TargetedLaser] {message}");
+            Debug.Log($"[{nameof(TargetedLaser)}] {message}");
         }
     }
 }

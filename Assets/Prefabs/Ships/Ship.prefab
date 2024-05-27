@@ -160,6 +160,7 @@ Transform:
   - {fileID: 1153920840480616833}
   - {fileID: 1477002463590628236}
   - {fileID: 3437375135062017473}
+  - {fileID: 2097084444479920444}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8957301522206084416
@@ -241,6 +242,9 @@ MonoBehaviour:
   <Turret3>k__BackingField: {fileID: 5697097578515729585}
   <Turret4>k__BackingField: {fileID: 3027705483984394477}
   <Turret5>k__BackingField: {fileID: 302792263226009205}
+  <BulletFired>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7550930293728303772
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,6 +276,74 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3437375135062017473}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8706903002796687280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2097084444479920444}
+  - component: {fileID: 5609237375916232112}
+  - component: {fileID: 604994201699107117}
+  m_Layer: 29
+  m_Name: TargetedLaser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2097084444479920444
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8706903002796687280}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3148879260958265706}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5609237375916232112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8706903002796687280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba8bf5b39f2fad6469403bfa72007b9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Upgrade>k__BackingField: {fileID: 11400000, guid: bbc02b50732a94a46bbea016b314a854, type: 2}
+  <Verbose>k__BackingField: 1
+--- !u!135 &604994201699107117
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8706903002796687280}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 10
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9209760424438241306
 GameObject:
   m_ObjectHideFlags: 0
