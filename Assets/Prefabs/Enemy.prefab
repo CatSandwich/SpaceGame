@@ -55,7 +55,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -115,6 +115,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Receiver>k__BackingField: {fileID: 7500153118317868471}
+  <Destroyed>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &2651293656610661171
 PrefabInstance:
   m_ObjectHideFlags: 0
