@@ -74,7 +74,10 @@ public class MissionManager : MonoBehaviour
         foreach (var mission in m_MissionsToRemove)
         {
             m_Missions.Remove(mission);
+            Destroy(mission.m_UIMissionInstance);
         }
+
+        m_MissionsToRemove.Clear();
     }
 
     private void GenerateMissions()
