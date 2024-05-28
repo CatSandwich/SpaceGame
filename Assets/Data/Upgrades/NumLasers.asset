@@ -17,7 +17,7 @@ MonoBehaviour:
   <Key>k__BackingField: laser
   <Upgrades>k__BackingField:
   - <Name>k__BackingField: Single Laser
-    <Cost>k__BackingField: 0
+    <Cost>k__BackingField: 300
     <Value>k__BackingField:
       B1: 0
       B2: 0
@@ -25,7 +25,7 @@ MonoBehaviour:
       B4: 0
       B5: 0
   - <Name>k__BackingField: Dual Laser
-    <Cost>k__BackingField: 0
+    <Cost>k__BackingField: 800
     <Value>k__BackingField:
       B1: 0
       B2: 1
@@ -33,7 +33,7 @@ MonoBehaviour:
       B4: 1
       B5: 0
   - <Name>k__BackingField: Triple Laser
-    <Cost>k__BackingField: 0
+    <Cost>k__BackingField: 1800
     <Value>k__BackingField:
       B1: 0
       B2: 1
@@ -41,7 +41,7 @@ MonoBehaviour:
       B4: 1
       B5: 0
   - <Name>k__BackingField: Quint Laser
-    <Cost>k__BackingField: 0
+    <Cost>k__BackingField: 2500
     <Value>k__BackingField:
       B1: 1
       B2: 1
