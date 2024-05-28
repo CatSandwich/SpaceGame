@@ -10,6 +10,12 @@ namespace Upgrades
         
         public T CurrentValue => Upgrades[Level].Value;
 
+        public override int CostToUpgrade => !IsMaxed
+             ? Upgrades[Level + 1].Cost
+             : throw new InvalidOperationException("Cannot get the cost of maxed upgrade.");
+        
+        public override bool IsMaxed => Level == Upgrades.Length - 1;
+
         [Serializable]
         public class Upgrade
         {
@@ -34,6 +40,9 @@ namespace Upgrades
 
         [field: SerializeField]
         public string Key { get; private set; }
+        
+        public abstract int CostToUpgrade { get; }
+        public abstract bool IsMaxed { get; }
         
         public int Level
         {
