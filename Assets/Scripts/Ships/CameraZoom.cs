@@ -19,6 +19,9 @@ namespace Ships
         
         [field: SerializeField]
         public float ZoomSpeed { get; private set; }
+
+        [field: SerializeField]
+        public float ZoomConvergence { get; private set; }
         
         [field: SerializeField]
         public float MapThreshold { get; private set; }
@@ -27,7 +30,6 @@ namespace Ships
         private Camera Camera { get; set; }
         
         private float TargetZoom { get; set; }
-        private Coroutine ZoomCoroutine { get; set; }
 
         private void Start()
         {
@@ -38,33 +40,20 @@ namespace Ships
         {
             if (Input.mouseScrollDelta != Vector2.zero)
             {
-                if (ZoomCoroutine != null)
-                {
-                    StopCoroutine(ZoomCoroutine);
-                }
-                
                 TargetZoom = Mathf.Clamp(TargetZoom - Input.mouseScrollDelta.y * ZoomSpeed, MinZoom, MaxZoom);
-                ZoomCoroutine = StartCoroutine(ZoomRoutine(TargetZoom, 0.2f));
+            }
+
+            if (Mathf.Abs(Zoom - TargetZoom) < 0.00001)
+            {
+                Zoom = TargetZoom;
+            }
+            else
+            {
+                Zoom = Mathf.Lerp(Zoom, TargetZoom, Time.deltaTime * ZoomConvergence);
             }
 
             UpdateCameraPosition();
             UpdateMapLayer();
-        }
-
-        private IEnumerator ZoomRoutine(float targetZoom, float duration)
-        {
-            float startZoom = Zoom;
-            float startTime = Time.time;
-            float endTime = startTime + duration;
-
-            while (Time.time < endTime)
-            {
-                float t = 1 - (endTime - Time.time) / duration;
-                Zoom = Mathf.SmoothStep(startZoom, targetZoom, t);
-                yield return null;
-            }
-
-            Zoom = targetZoom;
         }
 
         private void UpdateCameraPosition()
