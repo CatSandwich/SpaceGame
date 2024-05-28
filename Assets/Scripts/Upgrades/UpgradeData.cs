@@ -10,6 +10,12 @@ namespace Upgrades
         
         public T CurrentValue => Upgrades[Level].Value;
 
+        public override string CurrentUpgradeName => Upgrades[Level].Name;
+
+        public override string NextUpgradeName => !IsMaxed
+            ? Upgrades[Level + 1].Name
+            : throw new InvalidOperationException("Cannot get the next upgrade name of maxed upgrade.");
+
         public override int CostToUpgrade => !IsMaxed
              ? Upgrades[Level + 1].Cost
              : throw new InvalidOperationException("Cannot get the cost of maxed upgrade.");
@@ -41,6 +47,8 @@ namespace Upgrades
         [field: SerializeField]
         public string Key { get; private set; }
         
+        public abstract string CurrentUpgradeName { get; }
+        public abstract string NextUpgradeName { get; }
         public abstract int CostToUpgrade { get; }
         public abstract bool IsMaxed { get; }
         
