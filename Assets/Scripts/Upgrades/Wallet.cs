@@ -1,11 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Android;
 
 public class Wallet : MonoBehaviour
 {
+    public TMP_Text m_MoneyText;
     private int m_Money = 0;
+
+    private void Update()
+    {
+        m_MoneyText.text = $"${m_Money}";
+    }
 
     public int GetMoney()
     {
