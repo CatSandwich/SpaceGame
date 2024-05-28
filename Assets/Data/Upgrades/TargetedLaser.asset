@@ -17,31 +17,31 @@ MonoBehaviour:
   <Key>k__BackingField: auto_turret
   <Upgrades>k__BackingField:
   - <Name>k__BackingField: Basic (0.5/s fire rate, 1 damage)
-    <Cost>k__BackingField: 0
+    <Cost>k__BackingField: 100
     <Value>k__BackingField:
       MaxTargets: 1
       FireRate: 0.5
       Damage: 1
   - <Name>k__BackingField: Dual Barrel (+0.5/s fire rate)
-    <Cost>k__BackingField: 0
+    <Cost>k__BackingField: 300
     <Value>k__BackingField:
       MaxTargets: 1
       FireRate: 1
       Damage: 1
   - <Name>k__BackingField: Extra Turret (+1 target)
-    <Cost>k__BackingField: 0
+    <Cost>k__BackingField: 1000
     <Value>k__BackingField:
       MaxTargets: 2
       FireRate: 1
       Damage: 1
   - <Name>k__BackingField: Heaver Rounds (+1 damage)
-    <Cost>k__BackingField: 0
+    <Cost>k__BackingField: 3000
     <Value>k__BackingField:
       MaxTargets: 2
       FireRate: 1
       Damage: 2
   - <Name>k__BackingField: Quad Barrel (+1/s fire rate)
-    <Cost>k__BackingField: 0
+    <Cost>k__BackingField: 5000
     <Value>k__BackingField:
       MaxTargets: 2
       FireRate: 2

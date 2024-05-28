@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 31744939140850856}
   - component: {fileID: 2692782593752943731}
   m_Layer: 5
-  m_Name: Mission
+  m_Name: Mission_UI_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
