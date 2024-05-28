@@ -15,6 +15,8 @@ public class Mission
         m_Reward = reward;
         m_UIMissionInstance = uiMissionInstance;
         m_ShipsToSpawn = shipsToSpawn;
+
+        MissionManager.a_OnEnemyDestroyed += RemoveShip;
     }
 
     public bool IsComplete()
@@ -22,6 +24,16 @@ public class Mission
         if (!m_IsAccepted) return false;
 
         return m_TrackedEnemies.Count == 0;
+    }
+
+    private void RemoveShip(GameObject ship)
+    {
+        if (m_TrackedEnemies == null) return;
+
+        if (m_TrackedEnemies.Contains(ship))
+        {
+            m_TrackedEnemies.Remove(ship);
+        }
     }
 
     public void AcceptMission()

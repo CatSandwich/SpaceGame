@@ -6,6 +6,7 @@ using UnityEngine;
 public class MissionManager : MonoBehaviour
 {
     public static MissionManager s_Instance;
+    public static event Action<GameObject> a_OnEnemyDestroyed;
 
     public static MissionManager Instance
     {
@@ -38,6 +39,7 @@ public class MissionManager : MonoBehaviour
     [SerializeField] public Transform[] m_SpawnPoints;
 
     public List<Mission> m_Missions = new List<Mission>();
+    private List<Mission> m_MissionsToRemove = new List<Mission>();
 
     private void Awake()
     {
@@ -66,6 +68,11 @@ public class MissionManager : MonoBehaviour
                 wallet.AddMoney(mission.m_Reward);
             }
 
+            m_MissionsToRemove.Add(mission);
+        }
+
+        foreach (var mission in m_MissionsToRemove)
+        {
             m_Missions.Remove(mission);
         }
     }
@@ -82,5 +89,10 @@ public class MissionManager : MonoBehaviour
         var missions = new Mission(missionUI, reward, shipsToSpawn);
 
         m_Missions.Add(missions);
+    }
+
+    public void RaiseOnEnemyDestroyed(GameObject go)
+    {
+        a_OnEnemyDestroyed(go);
     }
 }
