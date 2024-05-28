@@ -7,7 +7,7 @@ using UnityEngine.Android;
 public class Wallet : MonoBehaviour
 {
     public TMP_Text m_MoneyText;
-    private int m_Money = 0;
+    public int m_Money = 0;
 
     private void Update()
     {
