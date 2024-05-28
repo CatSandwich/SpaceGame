@@ -110,6 +110,7 @@ MonoBehaviour:
   <MinZoom>k__BackingField: 0.5
   <Zoom>k__BackingField: 1
   <ZoomSpeed>k__BackingField: 0.05
+  <ZoomConvergence>k__BackingField: 8
   <MapThreshold>k__BackingField: 4
   <Camera>k__BackingField: {fileID: 8013785672838407753}
 --- !u!114 &4482864867857750579
