@@ -317,7 +317,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8706903002796687280}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba8bf5b39f2fad6469403bfa72007b9f, type: 3}
   m_Name: 
@@ -326,13 +326,49 @@ MonoBehaviour:
   <Verbose>k__BackingField: 1
   <TargetHit>k__BackingField:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8670795905512155853}
+        m_TargetAssemblyTypeName: Graphics.TargetIndicatorHandler, Assembly-CSharp
+        m_MethodName: HitTarget
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   <TargetAcquired>k__BackingField:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8670795905512155853}
+        m_TargetAssemblyTypeName: Graphics.TargetIndicatorHandler, Assembly-CSharp
+        m_MethodName: AddTarget
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   <TargetLost>k__BackingField:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8670795905512155853}
+        m_TargetAssemblyTypeName: Graphics.TargetIndicatorHandler, Assembly-CSharp
+        m_MethodName: RemoveTarget
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!135 &604994201699107117
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -737,6 +773,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 167683990114163613, guid: 5b9794d434edfe94183d8cd71c16b073, type: 3}
   m_PrefabInstance: {fileID: 3964076290561857040}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8670795905512155853 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5717285150623694045, guid: 5b9794d434edfe94183d8cd71c16b073, type: 3}
+  m_PrefabInstance: {fileID: 3964076290561857040}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b98a15c3892d84ea496586e42312c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7314845007576987067
 PrefabInstance:
   m_ObjectHideFlags: 0
