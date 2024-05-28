@@ -8,9 +8,7 @@ Shader "Unlit/Stars"
     }
     SubShader
     {
-        Tags { "RenderType"="Transparent" "Queue"="Transparent" }
-        ZTest Off
-        ZWrite Off
+        Tags { "RenderType"="Opaque" }
 
         Pass
         {
