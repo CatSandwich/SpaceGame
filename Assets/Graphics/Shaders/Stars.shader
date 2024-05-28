@@ -67,7 +67,7 @@ Shader "Unlit/Stars"
                 float stars = pow(n1, 20);
                 col += stars;
 
-                float n2 = simplex(i.localPos.xz * _StarScale * 0.7 + 69 + i.center.xz * _Parallax * 0.9);
+                float n2 = simplex(i.localPos.xz * _StarScale * 0.7 + 69 + i.center.xz * _Parallax * 0.8);
                 float stars2 = pow(n2, 20);
                 col += stars2;
 
@@ -76,8 +76,9 @@ Shader "Unlit/Stars"
                 float2 galaxyOffset = float2(cos(a), sin(a));
                 float3 galaxyPos = i.localPos * _StarScale * 0.01;
                 float galaxy = simplex(galaxyPos.xz * 3 + galaxyOffset * 0.2 + n3 * 1 + pow(n2, 5)  * 0.03);
-                col += pow(galaxy, 3) * spacePalette(length(galaxyPos)) * 0.1;
-                col += lerp(galaxy, 1, 0.6) * spacePalette(galaxyPos.x * 1) * 0.1 ;
+                float4 galaxyCol = float4(spacePalette(galaxyPos.x * 0.3 + galaxy * 0.05), 1);
+                col += lerp(galaxy, 1, 0.6) * galaxyCol * 0.05;
+                col += voronoi(galaxyPos).x * galaxyCol * 0.2;
 
                 return float4(col, 0);
             }

@@ -74,7 +74,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1879048247
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -106,8 +106,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 162148ce4a1e64344a4003afdae961d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MaxZoom>k__BackingField: 50
-  <MinZoom>k__BackingField: 5
+  <MaxZoom>k__BackingField: 3
+  <MinZoom>k__BackingField: 0.5
+  <Zoom>k__BackingField: 1
+  <ZoomSpeed>k__BackingField: 0.05
+  <MapThreshold>k__BackingField: 4
   <Camera>k__BackingField: {fileID: 8013785672838407753}
 --- !u!114 &4482864867857750579
 MonoBehaviour:
