@@ -76,6 +76,11 @@ namespace Ships
 
         private void RemoveTarget(LaserTarget target)
         {
+            if (!Targets.Contains(target))
+            {
+                return;
+            }
+            
             Targets.Remove(target);
             
             TargetLost.Invoke(target);

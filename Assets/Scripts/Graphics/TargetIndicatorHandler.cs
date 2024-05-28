@@ -6,13 +6,14 @@ namespace Graphics
 {
     public class TargetIndicatorHandler : MonoBehaviour
     {
-        public GameObject ship;
         public TargetIndicator indicatorPrefab;
         Dictionary<LaserTarget, TargetIndicator> targets = new Dictionary<LaserTarget, TargetIndicator>();
 
         public void AddTarget(LaserTarget target)
         {
-            TargetIndicator indicator = Instantiate(indicatorPrefab, transform);
+            TargetIndicator indicator = Instantiate(indicatorPrefab);
+            indicator.target = target;
+            indicator.parent = gameObject;
             targets.Add(target, indicator);
         }
 
@@ -26,11 +27,6 @@ namespace Graphics
         {
             var indicator = targets[target];
             // DO SOMETHING!!!
-        }
-
-        void Update()
-        {
-            transform.position = ship.transform.position;
         }
     }
 }
