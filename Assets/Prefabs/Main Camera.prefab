@@ -106,9 +106,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 162148ce4a1e64344a4003afdae961d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MaxZoom>k__BackingField: 50
-  <MinZoom>k__BackingField: 5
-  <MapThreshold>k__BackingField: 30
+  <MaxZoom>k__BackingField: 3
+  <MinZoom>k__BackingField: 0.5
+  <Zoom>k__BackingField: 1
+  <ZoomSpeed>k__BackingField: 0.05
+  <MapThreshold>k__BackingField: 4
   <Camera>k__BackingField: {fileID: 8013785672838407753}
 --- !u!114 &4482864867857750579
 MonoBehaviour:
