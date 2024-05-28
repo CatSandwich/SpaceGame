@@ -8,7 +8,9 @@ Shader "Unlit/Stars"
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" "Queue"="Geometry" }
+        Tags { "RenderType"="Transparent" "Queue"="Transparent" }
+        ZTest Off
+        ZWrite Off
 
         Pass
         {
@@ -51,11 +53,7 @@ Shader "Unlit/Stars"
                 v2f o;
                 o.localPos = v.vertex;
                 o.center = localToWorld(0);
-
-                float3 worldPos = localToWorld(v.vertex);
-                float3 camToWorld = worldPos - _WorldSpaceCameraPos;
-                worldPos = _WorldSpaceCameraPos + camToWorld * _StarZ;
-                o.vertex = UnityObjectToClipPos(worldToLocal(worldPos));
+                o.vertex = UnityObjectToClipPos(v.vertex);
                 return o;
             }
 
