@@ -14,20 +14,22 @@ namespace Ships
         public float MinZoom { get; private set; }
         
         [field: SerializeField]
+        public float Zoom { get; private set; }
+        
+        [field: SerializeField]
+        public float ZoomSpeed { get; private set; }
+        
+        [field: SerializeField]
         public float MapThreshold { get; private set; }
 
         [field: SerializeField]
         private Camera Camera { get; set; }
 
-        private float Zoom
-        {
-            get => Camera.transform.position.y;
-            set => Camera.transform.position = Camera.transform.position.WithY(value);
-        }
-
         private void Update()
         {
-            Zoom = Mathf.Clamp(Zoom - Input.mouseScrollDelta.y, MinZoom, MaxZoom);
+            Zoom = Mathf.Clamp(Zoom - Input.mouseScrollDelta.y * ZoomSpeed, MinZoom, MaxZoom);
+
+            Camera.transform.position = Camera.transform.position.WithY(Mathf.Pow(10, Zoom));
 
             int mask = ~0;
 
