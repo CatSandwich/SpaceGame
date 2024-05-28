@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 8957301522206084416}
   - component: {fileID: 7106950130891108354}
   - component: {fileID: 1390442587193409745}
+  - component: {fileID: 4054104238903724686}
   - component: {fileID: 7562928567977254621}
   m_Layer: 28
   m_Name: Ship
@@ -221,6 +222,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Health>k__BackingField: 5
+--- !u!114 &4054104238903724686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6940152491373118380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 386fa46cb9324dd479b92dbac54f248c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7562928567977254621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,7 +258,19 @@ MonoBehaviour:
   <Turret5>k__BackingField: {fileID: 302792263226009205}
   <BulletFired>k__BackingField:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ThrusterAudio, Assembly-CSharp
+        m_MethodName: PlayShoot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7550930293728303772
 GameObject:
   m_ObjectHideFlags: 0
